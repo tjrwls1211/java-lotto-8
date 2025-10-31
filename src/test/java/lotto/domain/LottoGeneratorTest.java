@@ -18,4 +18,27 @@ public class LottoGeneratorTest {
 
         assertThat(lotteryNumbers).hasSize(6);
     }
+
+    @DisplayName("뽑은 로또 번호는 1부터 45 사이의 값이다.")
+    @RepeatedTest(5)
+    void 로또_번호는_1부터_45_사이의_값이다() {
+        LottoGenerator lottoGenerator = new LottoGenerator();
+        Lotto lotto = lottoGenerator.generate();
+
+        List<Integer> lotteryNumbers = lotto.getNumbers();
+
+        assertThat(lotteryNumbers)
+                .allMatch(num -> num >= 1 && num <= 45);
+    }
+
+    @DisplayName("로또 번호는 중복되지 않는다.")
+    @RepeatedTest(5)
+    void shouldGenerateUniqueNumbers() {
+        LottoGenerator lottoGenerator = new LottoGenerator();
+        Lotto lotto = lottoGenerator.generate();
+
+        List<Integer> lotteryNumbers = lotto.getNumbers();
+
+        assertThat(lotteryNumbers).doesNotHaveDuplicates();
+    }
 }
