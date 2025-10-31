@@ -34,4 +34,8 @@ public class Lotto {
     private boolean hasValidRange(List<Integer> numbers) {
         return numbers.stream().allMatch(number -> number >= 1 && number <= 45);
     }
+
+    public List<Integer> getNumbers() {
+        return numbers;
+    }
 }
