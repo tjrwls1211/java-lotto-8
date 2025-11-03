@@ -25,4 +25,8 @@ public class LottoResult {
         double profitRate = ((double) totalPrize / purchaseAmount) * 100;
         return Math.round(profitRate * 10) / 10.0;
     }
+
+    public Map<LottoRank, Long> getRankCount() {
+        return rankCount;
+    }
 }
