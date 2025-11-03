@@ -10,11 +10,11 @@
 ---
 
 ### 로또 구매 및 발행
-- [ ] 구입 금액을 입력받는다.
+- [x] 구입 금액을 입력받는다.
   - 1,000원 단위로 입력받는다.
   - 1,000으로 나누어떨어지지 않으면 예외 발생.
   - 구입 금액이 0 이하일 경우 예외 발생.
-- [ ] 입력받은 금액만큼 로또를 발행한다.
+- [x] 입력받은 금액만큼 로또를 발행한다.
   - 로또 1장의 가격은 1,000원이다.
   - 각 로또는 1~45 사이의 **중복되지 않은 6개 숫자**로 구성된다.
   - 번호는 **오름차순 정렬** 후 출력된다.
@@ -22,7 +22,7 @@
 ---
 
 ### 당첨 번호 입력
-- [ ] 당첨 번호 6개를 쉼표(,)로 구분하여 입력받는다.
+- [x] 당첨 번호 6개를 쉼표(,)로 구분하여 입력받는다.
   - 각 번호는 1~45 사이의 숫자여야 하며 중복 불가.
   - 입력 형식이 잘못되면 예외 발생.
     - 입력 예시 : `1, 2, 3, 4, 5, 6`
@@ -30,12 +30,13 @@
 ---
 
 ### 보너스 번호 입력
-- [ ] 보너스 번호를 1개 입력받는다.
+- [x] 보너스 번호를 1개 입력받는다.
   - 1~45 사이의 숫자이며, 당첨 번호와 중복 불가.
+
 ---
 
 ### 당첨 결과 계산
-- [ ] 구매한 로또와 당첨 번호를 비교하여 일치 개수를 계산한다.
+- [x] 구매한 로또와 당첨 번호를 비교하여 일치 개수를 계산한다.
   - 등수별 당첨 조건과 금액은 아래 표를 따른다.
 
 | 등수 | 기준 | 상금 |
@@ -59,7 +60,7 @@
 ---
 
 ### 수익률 계산
-- [ ] 총 수익률 = (총 당첨 금액 / 구입 금액) * 100
+- [x] 총 수익률 = (총 당첨 금액 / 구입 금액) * 100
   - 소수점 둘째 자리에서 반올림
   - 예: `62.5%`, `100.0%`, `1000000.0%`
   - 출력 예시:
@@ -115,63 +116,59 @@
 - 중복된 번호 존재
 - 보너스 번호가 당첨 번호와 중복
 
+---
+
 ## 3. 클래스별 역할 요약
+
+| 클래스 | 역할 |
+|:--|:--|
+| `Lotto` | 로또 한 장(6개의 번호)을 표현하고 유효성 검증 수행 |
+| `LottoGenerator` | 무작위로 로또 번호를 생성하여 Lotto 객체로 반환 |
+| `LottoRank` | 당첨 결과(1~5등, 미당첨)를 Enum으로 관리 |
+| `LottoResult` | 당첨 통계 및 수익률 계산 |
+| `InputView` | 사용자 입력 처리 및 검증 |
+| `OutputView` | 당첨 결과 및 수익률 출력 |
+| `InputValidator` | 입력값 유효성 검사 및 예외 메시지 관리 |
+| `LottoController` | 전체 게임 흐름 제어 (입력 → 계산 → 출력) |
+| `Application` | 프로그램 시작점 (`main`) |
 
 ---
 
-
-## 5. 체크리스트
+## 4. 체크리스트
 
 ### 과제 진행 요구사항
-- [ ] 기능 구현 전 `README.md`에 기능 목록 작성
-- [ ] 기능 단위로 커밋
-- [ ] AngularJS Commit Message Convention 준수
-- [ ] GitHub 저장소 Fork 및 Clone 후 진행
-- [ ] PR 생성 및 제출
-- [ ] 마감 이후 추가 푸시 불가
+- [x] 기능 구현 전 `README.md`에 기능 목록 작성
+- [x] 기능 단위로 커밋
+- [x] AngularJS Commit Message Convention 준수
+- [x] GitHub 저장소 Fork 및 Clone 후 진행
+- [x] PR 생성 및 제출
+- [x] 마감 이후 추가 푸시 불가
 
 ---
 
 ### 프로그래밍 요구사항
-- [ ] JDK 21 환경에서 실행 가능
-- [ ] `Application.main()`을 시작점으로 사용
-- [ ] `build.gradle` 수정 금지
-- [ ] 외부 라이브러리 사용 금지
-- [ ] `System.exit()` 사용 금지
-- [ ] `camp.nextstep.edu.missionutils.Console` 및 `Randoms` API 사용
-- [ ] 파일 및 패키지 구조 변경 금지
-- [ ] Java Style Guide 준수
-- [ ] indent depth 2 이하
-- [ ] 3항 연산자, `else`, `switch/case` 금지
-- [ ] 함수 길이 15라인 이하
-- [ ] 함수는 한 가지 역할만 수행
-- [ ] Enum을 활용한 등수 관리
-- [ ] UI 로직 제외 단위 테스트 작성
-- [ ] 테스트 통과 시 `BUILD SUCCESSFUL` 확인  
+- [x] JDK 21 환경에서 실행 가능
+- [x] `Application.main()`을 시작점으로 사용
+- [x] `build.gradle` 수정 금지
+- [x] 외부 라이브러리 사용 금지
+- [x] `System.exit()` 사용 금지
+- [x] `camp.nextstep.edu.missionutils.Console` 및 `Randoms` API 사용
+- [x] 파일 및 패키지 구조 변경 금지
+- [x] Java Style Guide 준수
+- [x] indent depth 2 이하
+- [x] 3항 연산자, `else`, `switch/case` 금지
+- [x] 함수 길이 15라인 이하
+- [x] 함수는 한 가지 역할만 수행
+- [x] Enum을 활용한 등수 관리
+- [x] UI 로직 제외 단위 테스트 작성
+- [x] 테스트 통과 시 `BUILD SUCCESSFUL` 확인
+
+---
 
 ### Lotto 클래스 사용 규칙
 > 제공된 `Lotto` 클래스를 반드시 그대로 사용해야 한다.
 
-- [ ] `numbers` 외의 필드(인스턴스 변수) 추가 금지
-- [ ] `private` 접근 제어자 변경 금지
-- [ ] `Lotto` 클래스의 패키지 이동은 가능
-- [ ] `Lotto` 클래스의 구조 및 기본 로직 수정 금지
-
-```java
-public class Lotto {
-    private final List<Integer> numbers;
-
-    public Lotto(List<Integer> numbers) {
-        validate(numbers);
-        this.numbers = numbers;
-    }
-
-    private void validate(List<Integer> numbers) {
-        if (numbers.size() != 6) {
-            throw new IllegalArgumentException("[ERROR] 로또 번호는 6개여야 합니다.");
-        }
-    }
-
-    // TODO: 추가 기능 구현
-}
-```
+- [x] `numbers` 외의 필드(인스턴스 변수) 추가 금지
+- [x] `private` 접근 제어자 변경 금지
+- [x] `Lotto` 클래스의 패키지 이동은 가능
+- [x] `Lotto` 클래스의 구조 및 기본 로직 수정 금지
